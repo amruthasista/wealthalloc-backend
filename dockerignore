@@ -1,0 +1,413 @@
+# ==================== WealthAlloc Backend .dockerignore ====================
+# Files and directories to exclude from Docker build context
+# This speeds up builds and reduces image size
+
+# ==================== Python ====================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ==================== Virtual Environments ====================
+venv/
+ENV/
+env/
+.venv
+env.bak/
+venv.bak/
+pythonenv*
+pyvenv.cfg
+
+# ==================== IDEs and Editors ====================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.project
+.pydevproject
+.settings/
+*.code-workspace
+.vs/
+.atom/
+.eclipse/
+
+# ==================== Environment Variables (CRITICAL) ====================
+.env
+.env.*
+!.env.example
+*.env
+!*.env.example
+
+# ==================== Testing ====================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+pytestdebug.log
+coverage.xml
+*.cover
+.cache
+nosetests.xml
+test-results/
+.testmondata
+
+# ==================== Documentation ====================
+docs/
+*.md
+!README.md
+*.rst
+*.txt
+!requirements.txt
+!requirements*.txt
+
+# ==================== Git ====================
+.git/
+.gitignore
+.gitattributes
+.gitmodules
+.github/
+
+# ==================== CI/CD ====================
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+.jenkins/
+Jenkinsfile
+azure-pipelines.yml
+.github/
+
+# ==================== Database Files ====================
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# ==================== Logs ====================
+*.log
+logs/
+log/
+*.log.*
+
+# ==================== Model Files (if not needed in container) ====================
+# Uncomment if models are loaded from external storage
+# *.pth
+# *.h5
+# *.pkl
+# *.joblib
+# *.ckpt
+
+# ==================== Data Files ====================
+data/
+datasets/
+*.csv
+*.xlsx
+*.json
+*.parquet
+!sample_data/
+uploads/
+tmp_data/
+
+# ==================== Temporary Files ====================
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*~.nib
+
+# ==================== OS Generated ====================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ==================== Kubernetes ====================
+kubernetes/
+k8s/
+*.yaml
+*.yml
+!docker-compose.yml
+helm/
+charts/
+
+# ==================== Terraform ====================
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+
+# ==================== Scripts (if not needed in container) ====================
+scripts/
+*.sh
+!docker-entrypoint.sh
+!start.sh
+
+# ==================== Tests (if not running in container) ====================
+tests/
+test/
+*_test.py
+test_*.py
+conftest.py
+pytest.ini
+.pytest.ini
+tox.ini
+
+# ==================== Notebooks ====================
+*.ipynb
+.ipynb_checkpoints
+notebooks/
+jupyter/
+
+# ==================== Docker ====================
+.dockerignore
+Dockerfile*
+!Dockerfile
+docker-compose*.yml
+!docker-compose.yml
+.docker/
+
+# ==================== Cloud Provider Credentials ====================
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+gcloud-credentials.json
+aws-credentials.json
+azure-credentials.json
+service-account*.json
+
+# ==================== API Keys and Secrets ====================
+*api-key*
+*api_key*
+*apikey*
+*secret*
+*password*
+credentials.json
+
+# ==================== IBKR Specific ====================
+ibkr-credentials.json
+tws-settings/
+gateway-config/
+
+# ==================== Backup Files ====================
+*.bak
+*.backup
+*~
+*.orig
+backups/
+
+# ==================== Cache ====================
+.cache/
+cache/
+*.cache
+.sass-cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# ==================== Node modules (if any JS tools) ====================
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn.lock
+package-lock.json
+
+# ==================== Redis dump ====================
+dump.rdb
+appendonly.aof
+
+# ==================== Database backups ====================
+*.sql.gz
+*.dump
+
+# ==================== Configuration overrides ====================
+config.local.py
+config.local.yml
+settings.local.py
+local_settings.py
+
+# ==================== Performance and profiling ====================
+*.prof
+*.lprof
+.pymon
+profiling/
+
+# ==================== Security scanning results ====================
+.snyk
+.semgrep/
+trivy-results.json
+bandit-results.json
+
+# ==================== Local history ====================
+.history/
+.vscode-test/
+
+# ==================== Build artifacts ====================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ==================== Coverage reports ====================
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# ==================== Type checking ====================
+.mypy_cache/
+.pytype/
+.pyre/
+
+# ==================== License files (keep in image if needed) ====================
+# Uncomment to exclude
+# LICENSE
+# LICENSE.txt
+# COPYING
+
+# ==================== README files (keep in image if needed) ====================
+# Uncomment to exclude
+# README*
+# CHANGELOG*
+
+# ==================== Examples and samples ====================
+examples/
+samples/
+demo/
+
+# ==================== Development utilities ====================
+.venv-dev/
+dev-requirements.txt
+requirements-dev.txt
+
+# ==================== Monitoring and observability ====================
+.prometheus/
+.grafana/
+monitoring/
+
+# ==================== Static analysis ====================
+.pylint.d/
+.flake8
+.pylintrc
+pylint-report.txt
+
+# ==================== Migration files (if managed externally) ====================
+# alembic/versions/
+# migrations/
+
+# ==================== Media files ====================
+media/
+static/
+assets/
+public/
+
+# ==================== Certificates (never include unless absolutely necessary) ====================
+*.crt
+*.key
+*.pem
+certs/
+ssl/
+
+# ==================== Ansible ====================
+ansible/
+playbooks/
+*.retry
+
+# ==================== Vagrant ====================
+.vagrant/
+Vagrantfile
+
+# ==================== Archive files ====================
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# ==================== Editor swap files ====================
+*.swp
+*.swo
+*~
+.*.sw?
+
+# ==================== Python compiled files ====================
+*.pyc
+*.pyo
+*.pyd
+
+# ==================== macOS specific ====================
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# ==================== Windows specific ====================
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+
+# ==================== Linux specific ====================
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ==================== Exclude everything in .git ====================
+.git
+.gitignore
+.gitattributes
+.gitmodules
+
+# ==================== Notes ====================
+# 1. Keep this file updated as project evolves
+# 2. Exclude files that aren't needed at runtime
+# 3. Be careful with model files - only exclude if loaded from external storage
+# 4. Never include secrets, credentials, or sensitive data
+# 5. Smaller Docker context = faster builds
+# 6. Review periodically to ensure optimal build performance
+
+# ==================== End of .dockerignore ====================

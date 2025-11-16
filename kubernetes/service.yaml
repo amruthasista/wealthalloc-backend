@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wealthalloc-api-service
+  namespace: wealthalloc
+spec:
+  type: LoadBalancer
+  selector:
+    app: wealthalloc-api
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8000
